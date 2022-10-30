@@ -1,14 +1,16 @@
 import { useRouter } from "next/router"
 import { FC } from "react"
 import MainContainer from "../../components/MainContainer"
-import { userType } from "../../types"
+import { userType, userTypeInterface } from "../../types"
 
-type userProps = {
-    user: userType,
+
+
+interface userTypesProps {
+    user: userTypeInterface
 }
 
 
-const User:FC<userProps> = ({user}) => {
+export default function User({user} : userTypesProps){
     const {query} = useRouter()
     return (
         <MainContainer keys={user.name} title={user.name}>
@@ -27,7 +29,6 @@ const User:FC<userProps> = ({user}) => {
     )
 }
 
-export default User
 
 export async function getServerSideProps({params}) {
     const response = await fetch (`http://127.0.0.1:8000/api/users?id=${params.id}`)

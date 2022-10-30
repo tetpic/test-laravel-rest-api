@@ -15,3 +15,11 @@ export type userType = {
     id: number,
 
 }
+
+export interface userTypeInterface {
+    name: string
+    surname: string
+    login: string
+    email: string
+    id: number
+}
