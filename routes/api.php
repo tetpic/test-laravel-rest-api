@@ -23,3 +23,5 @@ Route::get('users', [UsersController::class, 'index']);
 Route::post('users', [UsersController::class, 'addUser']);
 Route::put('users/{id}', [UsersController::class, 'updateUser']);
 // Route::get('users?id={id}', [UsersController::class, 'getOneUser']);
+
+// Route::middleware('auth_api')->match(['post', 'get'], 'user/me/{id}', )

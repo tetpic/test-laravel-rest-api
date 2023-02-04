@@ -28,14 +28,27 @@ class UsersController extends Controller
     }
 
     public function addUser(Request $request) {
-        $addUser = UsersModel::create($request->all());
-        return response()->json($addUser, 201); 
+        if(isset($request['password'])){
+            $password = $request->password; 
+            $password = md5($password);
+            $request["password"] = "$password";
+            $addUser = UsersModel::create($request->all());
+            return response()->json($request['login'], 201); 
+        } else {
+
+            return response()->json(["error" => "Введите пароль"], 406);
+        };
     }
 
     public function updateUser(Request $request, UsersModel $id) {
         $id->update($request->all() );
-        return response()->json($id, 200);  
+        return response()->json(["response" => 'success'], 200);  
     }
+
+    // TODO: функция для проверки авторизован пользователь или нет
+
+    // TODO: написать функцию для авторизации пользователя, в дальнейшем изменение данных если пользователь авторизован
+
 
 
 

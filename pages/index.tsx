@@ -13,7 +13,7 @@ const Index = () => {
                     Main page
                 </h1>
             </div>
-        </MainContainer>
+       </MainContainer>
     )
 }
 
