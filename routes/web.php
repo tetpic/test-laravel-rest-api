@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/{url}', function ($url) {
+//     return redirect('http://localhost:3000/'.$url);
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('http://localhost:3000/');
 });

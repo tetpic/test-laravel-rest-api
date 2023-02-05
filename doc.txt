@@ -1,0 +1,5 @@
+Начало работы:
+    Запуск laravel : php artisan serve
+    Запуск next : npm run dev
+    Запустить БД на XAMPP
+

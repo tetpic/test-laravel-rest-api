@@ -4,6 +4,7 @@ import MainContainer from "../components/MainContainer"
 import { FC } from "react"
 
 
+
 // TODO: прописать .env используя npm dotenv, и в последующем использовать переменные окружения
 const Index = () => {
     return (
